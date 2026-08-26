@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI';
+    overflow: hidden;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.fade-rot-down {
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    z-index: 10;
+    font-size: 600%;
+    
+
+}
+
+#rock-container {
+    width: 400px;
+    height: 400px;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        /* Pull text back along Z-axis and tilt it back */
+        transform: rotateX(90deg) translateZ(50px) scale(0.5);
+    }
+
+    100% {
+        opacity: 1;
+        /* Swing text upright towards camera */
+        transform: rotateX(0deg) translateZ(0px) scale(1);
+    }
+}
