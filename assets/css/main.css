@@ -1,51 +1,79 @@
-body {
+.background {
     margin: 0;
-    min-height: 100vh;
-    background-color: #000;
-    color: #fff;
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    background-color: black;
+    color: white;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+#quote {
+    display: inline-block;
+    margin-bottom: 20px;
+    max-width: 35ch;
+    text-align: center;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    z-index: 10;
+    font-size: 200%;
+}
+
+#stoned {
+    width: 20%;
+    height: auto;
+}
+
+.subtitle {
+    margin: 0;
+}
+
+.horizontal {
+    display: flex;
+    justify-content: space-between; /* Pushes text to the left and button to the right */
+    align-items: center;            /* Vertically aligns text and button */
+    width: 100%;
+}
+#Catalog {
+    border: hidden;
+    font-size: 120%;
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+    padding: 5px 25px;
     font-family: 'Segoe UI';
-    overflow: hidden;
 }
 
 main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    margin: 0;
+    padding: 50px 20px; 
 }
 
-.fade-rot-down {
+body {
+    margin: 0;
+    background-color: rgb(220, 220, 220);
+    color: black;
+    font-family: 'Segoe UI', sans-serif;
+}
+.fade {
     opacity: 0;
     animation: fadeIn 1.5s ease-in-out forwards;
-    display: inline-block;
-    margin-bottom: 20px;
-    font-size: 3rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    z-index: 10;
-    font-size: 600%;
-    
-
 }
 
-#rock-container {
-    width: 400px;
-    height: 400px;
+.fadeafter1s {
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out 1s forwards;
 }
 
 @keyframes fadeIn {
     0% {
         opacity: 0;
-        /* Pull text back along Z-axis and tilt it back */
-        transform: rotateX(90deg) translateZ(50px) scale(0.5);
     }
 
     100% {
         opacity: 1;
-        /* Swing text upright towards camera */
-        transform: rotateX(0deg) translateZ(0px) scale(1);
     }
 }

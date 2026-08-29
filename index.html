@@ -4,35 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>You Rock</title>
-    
-    <!-- Custom CSS -->
+    <script src="assets/js/main.js" defer></script>
     <link rel="stylesheet" href="assets/css/main.css">
-
-    <!-- Core Three.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-
-<!-- ConvexGeometry Add-on (Required for triangulation) -->
-<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/geometries/ConvexGeometry.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/math/ConvexHull.js"></script>
-
 </head>
-<body>
-    <main>
-        <div >
-            <h1 class="fade-rot-down">
-                You rock
+    <body>
+        <header class="background">
+            <h1
+            id="quote"
+            class="fade">
             </h1>
-        </div>
-        <div
 
-        has-rock="true" 
-        seed="42"
-        ></div>
-        
-    </main>
+            <img
+            id="stoned"
+            src="assets/images/1.png"
+            class="fadeafter1s">
+        </header>
 
-    <!-- Custom JavaScript -->
-    <script src="assets/js/rock.js"></script>
-</body>
+        <main>
+            <div class="horizontal">
+                <h2 class="subtitle">
+                    • Nuestras Piedras.
+                </h2>
+                <button 
+                id="Catalog"
+                onclick="redirectTo('https://music.youtube.com/')"
+                >
+                    Ver Todo
+                </button>
+            </div>
+            
+        </main>
+
+        </body>
+
 
 </html>
