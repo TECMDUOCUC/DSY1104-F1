@@ -27,6 +27,7 @@
     height: auto;
 }
 
+
 .subtitle {
     margin: 0;
 }
@@ -58,6 +59,10 @@ body {
     color: black;
     font-family: 'Segoe UI', sans-serif;
     overflow-x: hidden;
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 .fade {
     opacity: 0;
@@ -112,8 +117,8 @@ body {
 }
 
 .card.far {
-    transform: scale(0.6);
-    opacity: 0;
+    transform: scale(0.4);
+    opacity: .2;
     pointer-events: none;
 }
 
@@ -156,10 +161,11 @@ body {
 }
 
 .card-img {
-    width: 20vh;
-    height: auto;
+    width: auto;
+    height: 20vh;
     object-fit: contain;
     margin: 10px 0;
+    max-width: 30vh;
 }
 
 .card-content {
@@ -176,13 +182,25 @@ footer {
     padding: 5px 20px;
     margin: 0;
 
+    margin-top: auto;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-footer a {
+.prettyLink {
     color: white;
     font-family: 'Segoe UI';
-    font-size: 120%;
+    text-decoration: none;
+}
+
+.prettyLinkBlack {
+    color: black;
+    font-family: 'Segoe UI';
+    text-decoration: none;
+}
+
+.info {
+    padding: 10px 30px;
 }
