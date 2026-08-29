@@ -31,6 +31,51 @@ const stones = [
     "assets/images/18.png",
 ]
 
+let activeIndex = 1;
+
+function updateCarousel() {
+    const carousel = document.querySelector('.carousel');
+    const track = document.querySelector('.carousel-track');
+    const cards = document.querySelectorAll('.carousel .card');
+    const total = cards.length;
+
+    if (total === 0) return;
+
+    const cardWidth = 250;
+    const gap = 30;
+    const moveDistance = cardWidth + gap;
+
+    // Calculate center offset relative to container viewport
+    const containerCenter = carousel.offsetWidth / 2;
+    const cardCenter = cardWidth / 2;
+    const initialCenterOffset = containerCenter - cardCenter;
+
+    // Shift track to center the active card
+    const offset = initialCenterOffset - (activeIndex * moveDistance);
+    track.style.transform = `translateX(${offset}px)`;
+
+    cards.forEach((card, index) => {
+        card.classList.remove('active', 'side', 'far');
+
+        if (index === activeIndex) {
+            card.classList.add('active');
+        } else if (index === activeIndex - 1 || index === activeIndex + 1) {
+            card.classList.add('side');
+        } else {
+            card.classList.add('far');
+        }
+    });
+}
+
+function setActiveCard(cardElement) {
+    const cards = Array.from(document.querySelectorAll('.carousel .card'));
+    const index = cards.indexOf(cardElement);
+    if (index !== -1) {
+        activeIndex = index;
+        updateCarousel();
+    }
+}
+
 function redirectTo(uri, newPage){
     if (uri) {
         if (newPage){
@@ -39,6 +84,11 @@ function redirectTo(uri, newPage){
             window.location.href = uri;
         }
     }
+}
+
+function visitProduct(rockId) {
+    const url = `product.html?id=${encodeURIComponent(rockId)}`;
+    window.location.href = url;
 }
 
 function renderText(){
@@ -53,4 +103,11 @@ function renderText(){
     ];
 }
 
-renderText();
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    updateCarousel();
+    renderText();
+
+    window.addEventListener('resize', updateCarousel);
+});
