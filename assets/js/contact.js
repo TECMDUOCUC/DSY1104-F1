@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         if (form.checkValidity()) {
             const data = Object.fromEntries(new FormData(e.target));
+            alert("Dejenos tranquilos.")
             console.log('Form submission payload:', data);
             form.reset();
         }

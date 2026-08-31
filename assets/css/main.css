@@ -206,26 +206,6 @@ footer {
     padding: 10px 30px;
 }
 
-.loginBox {
-    background-color: black;
-    color: white;
-    width: 70vh;
-    height: auto;
-    border-radius: 20px;
-    margin: auto;
-    padding: 30px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.loginBox h2 {
-    margin: 0 0 20px 0;
-    font-size: 1.8rem;
-    letter-spacing: 1px;
-}
-
 .contact-form {
     width: 100%;
     display: flex;
@@ -295,7 +275,7 @@ footer {
     flex-direction: column;
     padding: 20px;
     padding-top: 0px;
-    background-color: gray;
+    background-color: black;
     border-radius: 20px;
     color: white;
     font-family: 'Segoe UI';
@@ -308,7 +288,7 @@ footer {
     color: white;
     font-size: 100%;
     border: 0;
-    border-bottom: 2px #000 solid;
+    border-bottom: 2px white solid;
 
 }
 
@@ -318,6 +298,47 @@ footer {
     justify-content: center;
     gap: 10px;
     padding: 20px;
-    background-color: gray;
+    background-color: black;
     border-radius: 20px;
+}
+
+header {
+    background-color: black;
+    color: white;
+    height: 70px;
+    padding: 5px 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.centeredMain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginBox {
+    background-color: black;
+    color: white;
+    width: 70vh;
+    height: auto;
+    border-radius: 20px;
+    padding: 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginBox h2 {
+    margin: 0 0 20px 0;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+
+.navList {
+    display: flex;
+    flex-direction: column;
 }

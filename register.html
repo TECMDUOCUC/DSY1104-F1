@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Pieca</title>
-        <script src="assets/js/contact.js" defer></script>
+        <script src="assets/js/account.js" defer></script>
         <link rel="stylesheet" href="assets/css/main.css">
     </head> 
 
@@ -22,11 +22,13 @@
                 </a>
             </nav>
         </header>
+
         <main class="centeredMain">
             <div class="loginBox">
-                <h2>Contáctenos</h2>
+                <h2>Regístrese</h2>
                 
-                <form id="contact" class="contact-form" onsubmit="event.preventDefault();">
+                <form id="register" class="contact-form" onsubmit="event.preventDefault();">
+
                     <div class="row">
                         <input name="name" type="text" placeholder="Nombre" required maxlength="25"
                         oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '')"
@@ -35,14 +37,21 @@
                         oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '')"
                         >
                     </div>
+
+                    <input name="second" type="text" placeholder="Nombre de Usuario" required maxlength="25"
+                        oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '')"
+                    >
                     
                     <input name="email" type="email" placeholder="Correo electrónico" required>
+                    <input name="password" type="password" placeholder="Contraseña" required>
                     
-                    <textarea name="message" maxlength="300" placeholder="Escriba su mensaje (máx. 300 caracteres)..." required></textarea>
-                    
-                    <button type="submit" id="sendData">Enviar</button>
+                    <button type="submit" id="sendData">Registrar</button>
+                    <button type="button" class="secondary-btn" onclick="redirectTo('login.html')">
+                        ¿Ya tiene una cuenta?
+                    </button>
                 </form>
             </div>
+
         </main>
         
 

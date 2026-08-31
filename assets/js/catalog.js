@@ -15,17 +15,21 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault(); // Prevents the browser's default form submission and page reload
     });
 
-    
+
     searchInput.addEventListener('input', () => {
         const query = searchInput.value.trim().toLowerCase();
 
         cards.forEach((card) => {
             const title = card.querySelector('h3').textContent.toLowerCase();
 
-            if (query.length > 0 && title.includes(query)) {
+            if (title.includes(query)) {
                 card.style.display = '';
             } else {
-                card.style.display = 'none';
+                if (query.length > 0) {
+                    card.style.display = 'none';
+                } else {
+                    card.style.display = '';
+                }
             }
         });
     });
