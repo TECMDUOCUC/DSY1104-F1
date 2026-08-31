@@ -33,6 +33,7 @@ const stones = [
 
 let activeIndex = 1;
 
+//Gemini generated FUNCTION
 function updateCarousel() {
     const carousel = document.querySelector('.carousel');
     const track = document.querySelector('.carousel-track');
@@ -41,7 +42,7 @@ function updateCarousel() {
 
     if (total === 0) return;
 
-    const cardWidth = 250;
+    const cardWidth = 280;
     const gap = 30;
     const moveDistance = cardWidth + gap;
 
@@ -109,5 +110,22 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCarousel();
     renderText();
 
+    
     window.addEventListener('resize', updateCarousel);
 });
+
+//Gemini generated code below:
+window.addEventListener('click', () => {
+        const audio = document.getElementById('bg-music');
+        
+        audio.volume = 1.0; 
+
+        audio.play()
+            .then(() => {
+                console.log("Success! Audio is looping in the background.");
+            })
+            .catch(error => {
+                console.error("Browser explicitly blocked playback:", error);
+            });
+            
+    }, { once: true });
