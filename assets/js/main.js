@@ -33,7 +33,7 @@ const stones = [
 
 let activeIndex = 1;
 
-//Gemini generated FUNCTION
+//Gemini 3.1 pro generated FUNCTION
 function updateCarousel() {
     const carousel = document.querySelector('.carousel');
     const track = document.querySelector('.carousel-track');
@@ -42,19 +42,23 @@ function updateCarousel() {
 
     if (total === 0) return;
 
-    const cardWidth = 280;
-    const gap = 30;
-    const moveDistance = cardWidth + gap;
+    // Get the actual active card element
+    const activeCard = cards[activeIndex];
 
-    // Calculate center offset relative to container viewport
+    // Get the center of the visible carousel container
     const containerCenter = carousel.offsetWidth / 2;
-    const cardCenter = cardWidth / 2;
-    const initialCenterOffset = containerCenter - cardCenter;
 
-    // Shift track to center the active card
-    const offset = initialCenterOffset - (activeIndex * moveDistance);
+    // Get the exact center of the active card relative to the track
+    // offsetLeft handles all varying widths and gaps dynamically!
+    const activeCardCenter = activeCard.offsetLeft + (activeCard.offsetWidth / 2);
+
+    // Calculate how much we need to shift the track to align both centers
+    const offset = containerCenter - activeCardCenter;
+
+    // Apply the shift
     track.style.transform = `translateX(${offset}px)`;
 
+    // Update classes for the styling
     cards.forEach((card, index) => {
         card.classList.remove('active', 'side', 'far');
 
@@ -66,7 +70,7 @@ function updateCarousel() {
             card.classList.add('far');
         }
     });
-}
+};
 
 function setActiveCard(cardElement) {
     const cards = Array.from(document.querySelectorAll('.carousel .card'));
